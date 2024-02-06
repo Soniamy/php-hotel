@@ -90,7 +90,7 @@
         ],
 
     ];
-      if(isset($_POST['parking']) && !empty($_POST['parking'])) {
+        if(isset($_POST['parking']) && !empty($_POST['parking'])) {
         $temp = [];
 
         foreach($hotels as $hotel) {
@@ -101,6 +101,10 @@
         }
         $hotels = $temp;
     }
+    if(isset($_POST['vote']) && !empty($_POST['vote'])) {
+        $vote = $_POST['vote'];
+        $hotels = array_filter($hotels, fn($value) => $value['vote'] >= $vote);
+    }   
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -114,7 +118,7 @@
 </head>
 <body>
        <div class="container">
-         <h1 class="text-center mt-5 display-1 fw-bold">Hotel</h1>
+         <h1 class="text-center mt-5 display-1 fw-bold title">Hotel</h1>
             <h5 class="text-center mt-3 mb-5">Trova il tuo hotel</h5>
             <div class='d-flex flex-wrap justify-content-center'>
                 <h3 class="mt-4 mb-4">Hote Disponibili</h3>

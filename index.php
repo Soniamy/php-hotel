@@ -64,7 +64,17 @@
                                 <option value="no">No parcheggio</option>
                             </select>
                         </div>
-                       
+                        <div>
+                            <label for="vote">Seleziona un voto da 1 a 5</label>
+                            <select name="vote" class="form-select" id="vote">
+                                <option value="">Scegli</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-primary mt-4 w-100">Invia</button>
                 </form>
