@@ -38,6 +38,69 @@
         ],
 
     ];
+      if(isset($_POST['parking']) && !empty($_POST['parking'])) {
+        $temp = [];
+
+        foreach($hotels as $hotel) {
+            $park = $hotel['parking'] ? 'si' : 'no';
+            if($park == $_POST['parking']) {
+                $temp[] = $hotel; 
+            }
+        }
+        $hotels = $temp;
+    }
+?>
+<?php
+ $hotels = [
+
+        [
+            'name' => 'Hotel Belvedere',
+            'description' => 'Hotel Belvedere Descrizione',
+            'parking' => true,
+            'vote' => 4,
+            'distance_to_center' => 10.4
+        ],
+        [
+            'name' => 'Hotel Futuro',
+            'description' => 'Hotel Futuro Descrizione',
+            'parking' => true,
+            'vote' => 2,
+            'distance_to_center' => 2
+        ],
+        [
+            'name' => 'Hotel Rivamare',
+            'description' => 'Hotel Rivamare Descrizione',
+            'parking' => false,
+            'vote' => 1,
+            'distance_to_center' => 1
+        ],
+        [
+            'name' => 'Hotel Bellavista',
+            'description' => 'Hotel Bellavista Descrizione',
+            'parking' => false,
+            'vote' => 5,
+            'distance_to_center' => 5.5
+        ],
+        [
+            'name' => 'Hotel Milano',
+            'description' => 'Hotel Milano Descrizione',
+            'parking' => true,
+            'vote' => 2,
+            'distance_to_center' => 50
+        ],
+
+    ];
+      if(isset($_POST['parking']) && !empty($_POST['parking'])) {
+        $temp = [];
+
+        foreach($hotels as $hotel) {
+            $park = $hotel['parking'] ? 'si' : 'no';
+            if($park == $_POST['parking']) {
+                $temp[] = $hotel; 
+            }
+        }
+        $hotels = $temp;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,27 +114,10 @@
 </head>
 <body>
        <div class="container">
-         <h1 class="text-center mt-5 display-1 fw-bold title">Hotel</h1>
+         <h1 class="text-center mt-5 display-1 fw-bold">Hotel</h1>
             <h5 class="text-center mt-3 mb-5">Trova il tuo hotel</h5>
-            <div class="my-5 d-flex justify-content-center">
-                <form action="script.php" method="POST">
-                    <div class="d-flex">
-                        <div class="me-5">
-                            <label for="parking">Vuoi il parcheggio?</label>
-                            <select name="parking" class="form-select" id="parking">
-                                <option value="">Scegli</option>
-                                <option value="si">Con parcheggio</option>
-                                <option value="no">No parcheggio</option>
-                            </select>
-                        </div>
-                       
-                    </div>
-                    <button type="submit" class="btn btn-primary mt-4 w-100">Invia</button>
-                </form>
-            </div>
-
             <div class='d-flex flex-wrap justify-content-center'>
-                <h3 class="mt-4 mb-4">Hotel</h3>
+                <h3 class="mt-4 mb-4">Hote Disponibili</h3>
                 <table class='table text-capitalize'>
                     <thead>
                         <tr>
